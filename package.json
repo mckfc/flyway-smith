@@ -1,10 +1,10 @@
 {
-  "name": "flyway-migration-helper",
-  "displayName": "Flyway Migration helper",
+  "name": "flyway-smith",
+  "displayName": "Flyway Smith",
   "description": "Generate migration for flyway",
-  "publisher": "tinhn90",
+  "publisher": "McLikeKFC",
   "author": {
-    "name": "Hoang Nhu Tin"
+    "name": "Qinghua Wang"
   },
   "version": "0.0.1",
   "engines": {
@@ -22,14 +22,22 @@
   "contributes": {
     "commands": [
       {
-        "command": "flyway-migration-helper.createMigration",
-        "title": "Create Flyway Migration..."
+        "command": "flyway-migration-helper.createVersionedMigration",
+        "title": "Create Flyway Versioned Migration..."
+      },
+      {
+        "command": "flyway-migration-helper.createRepeatedMigration",
+        "title": "Create Flyway Repeated Migration..."
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "flyway-migration-helper.createMigration",
+          "command": "flyway-migration-helper.createVersionedMigration",
+          "when": "resourceScheme == file && resourceExtname == ''"
+        },
+        {
+          "command": "flyway-migration-helper.createRepeatedMigration",
           "when": "resourceScheme == file && resourceExtname == ''"
         }
       ]
